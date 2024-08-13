@@ -11,9 +11,8 @@ export default {
         'dark-text': '#ffffff',
       },
       fontFamily: {
-        quiksand: ['Quicksand', 'sans-serif'],
+        opensans: ['Open Sans', 'sans-serif'],
       },
     },
   },
-  plugins: [],
 }

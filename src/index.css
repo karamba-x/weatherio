@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,5 +6,9 @@
 
 * {
   color-scheme: dark;
+}
+
+.forecast-item {
+  @apply h-full rounded-2xl py-2 px-5 bg-zinc-700;
 }
 
