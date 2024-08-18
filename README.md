@@ -1,6 +1,8 @@
-# Weather.&#8203;io
+# ⛅ Weather.&#8203;io
 
 Weather.&#8203;io is a modern and user-friendly weather application built using React, Tailwind CSS, and Redux Toolkit. This project showcases a comprehensive weather forecasting tool with hourly and daily forecasts, weather condition icons, and an interactive map. The app fetches data from [WeatherAPI.com](https://www.weatherapi.com/) and dynamically updates the interface to provide users with the latest weather information.
+
+### [DEMO](https://karamba-x.github.io/weatherio/)
 
 ## Features
 
