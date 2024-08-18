@@ -50,5 +50,3 @@ Weather.&#8203;io is a modern and user-friendly weather application built using 
     ``` bash
     npm run preview
     ```
-## Screenshot
-![](https://imgur.com/a/SRsAfoI)
