@@ -51,4 +51,4 @@ Weather.&#8203;io is a modern and user-friendly weather application built using 
     npm run preview
     ```
 ## Screenshot
-![1](../weatherio.png)
+![](https://imgur.com/a/SRsAfoI)
