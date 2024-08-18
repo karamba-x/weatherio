@@ -12,3 +12,16 @@
   @apply h-full rounded-2xl py-2 px-5 bg-zinc-700;
 }
 
+.mask-custom {
+  mask-image: radial-gradient(white, black);
+}
+
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+  filter: invert(100%) hue-rotate(180deg) brightness(80%) contrast(70%);
+}
+
+.leaflet-layer,
+.leaflet-control-attribution {
+  filter: brightness(130%) contrast(90%);
+}

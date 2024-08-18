@@ -1,25 +1,15 @@
-import { useState } from 'react';
-
-const SegmentedControl = () => {
-  const [selected, setSelected] = useState('option1');
-
+const SegmentedControl = ({ selected, setSelected, options }) => {
   const handleSelect = (option) => {
     setSelected(option);
   };
 
-  const options = [
-    { value: 'option1', label: 'Wind' },
-    { value: 'option2', label: 'Rain' },
-    { value: 'option3', label: 'Snow' },
-  ];
-
   const getTranslateClass = () => {
     switch (selected) {
-      case 'option1':
+      case 'wind_kph':
         return 'translate-x-0';
-      case 'option2':
+      case 'chance_of_rain':
         return 'translate-x-full';
-      case 'option3':
+      case 'chance_of_snow':
         return 'translate-x-[200%]';
       default:
         return '';

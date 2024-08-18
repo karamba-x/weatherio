@@ -2,18 +2,12 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-const initialState = {
-  data: null,
-  loading: false,
-  error: null
-};
-
-export const fetchIp = createAsyncThunk(
-  'location/fetchWeather',
-  async (_, { rejectWithValue }) => {
+export const searchCities = createAsyncThunk(
+  'cities/searchCities',
+  async (query, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `https://api.weatherapi.com/v1//ip.json?key=${import.meta.env.VITE_API_KEY}&q=auto:ip`
+        `http://api.weatherapi.com/v1/search.json?q=${query}&key=${import.meta.env.VITE_API_KEY}`
       );
       return response.data;
     } catch (error) {
@@ -33,24 +27,29 @@ export const fetchIp = createAsyncThunk(
   }
 );
 
-const locationSlice = createSlice({
-  name: 'location',
-  initialState,
+const searchSlice = createSlice({
+  name: 'cities',
+  initialState: {
+    searchResults: [],
+    loading: false,
+    error: null
+  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchIp.pending, (state) => {
+      .addCase(searchCities.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
-      .addCase(fetchIp.fulfilled, (state, action) => {
+      .addCase(searchCities.fulfilled, (state, action) => {
         state.loading = false;
-        state.data = action.payload;
+        state.searchResults = action.payload;
       })
-      .addCase(fetchIp.rejected, (state, action) => {
+      .addCase(searchCities.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.error.message;
+        state.error = action.payload;
       });
   }
 });
 
-export default locationSlice.reducer;
+export default searchSlice.reducer;
